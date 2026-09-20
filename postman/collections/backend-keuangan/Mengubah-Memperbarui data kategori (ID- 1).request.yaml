@@ -1,0 +1,8 @@
+$kind: http-request
+name: "Mengubah/Memperbarui data kategori (ID: 1)"
+url: http://backend-keuangan.test/api/v1/categories
+method: POST
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+order: 9000

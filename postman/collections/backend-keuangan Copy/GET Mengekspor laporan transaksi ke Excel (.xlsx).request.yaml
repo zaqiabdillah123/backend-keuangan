@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://backend-keuangan.test/api/v1/transactions/export-excel
+method: GET
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+order: 10000

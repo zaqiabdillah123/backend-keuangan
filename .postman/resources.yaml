@@ -1,0 +1,13 @@
+# Use this workspace to collaborate
+workspace:
+  id: 1179dec2-4963-415b-8c3d-2fc241614fc4
+
+cloudResources:
+  collections:
+    ../postman/collections/backend-keuangan Copy: f5750125-ebe4-4be2-81ea-6ca4b31c36a9
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/

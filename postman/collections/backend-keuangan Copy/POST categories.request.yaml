@@ -1,0 +1,14 @@
+$kind: http-request
+url: http://backend-keuangan.test/api/v1/categories
+method: POST
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: json
+  content: |-
+    {
+        "name": "Operasional PT",
+        "type": "expense"
+    }
+order: 4000

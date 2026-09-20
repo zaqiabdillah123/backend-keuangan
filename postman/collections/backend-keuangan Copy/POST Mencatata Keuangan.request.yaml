@@ -1,0 +1,17 @@
+$kind: http-request
+url: http://backend-keuangan.test/api/v1/transactions/expense
+method: POST
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: json
+  content: |-
+    {
+        "category_id": 4,
+        "item_name": "Maintenance AC Kantor",
+        "amount": 250000,
+        "transaction_date": "2026-09-20",
+        "notes": "Keperluan PT"
+    }
+order: 7000

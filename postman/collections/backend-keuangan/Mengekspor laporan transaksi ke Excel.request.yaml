@@ -1,0 +1,10 @@
+$kind: http-request
+name: 'Mengekspor laporan transaksi ke Excel (.xlsx)'
+url: 'http://backend-keuangan.test/api/v1/transactions/export-excel'
+method: GET
+headers:
+  - key: Accept
+    value: application/json
+  - key: Authorization
+    value: 'Bearer {{token}}'
+order: 6000

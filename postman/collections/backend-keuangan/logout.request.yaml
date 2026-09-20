@@ -1,0 +1,27 @@
+$kind: http-request
+description: ""
+url: http://backend-keuangan.test/api/v1/logout
+method: POST
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: json
+  content: "{\r
+
+    \    \"email\": \"admin@perusahaan.com\",\r
+
+    \    \"password\": \"password123\"\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "var jsonData = pm.response.json();\r
+
+      if (jsonData.access_token) {\r
+
+      \    pm.environment.set(\"token\", jsonData.access_token);\r
+
+      }"
+    language: text/javascript
+order: 2000

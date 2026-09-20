@@ -1,0 +1,13 @@
+$kind: http-request
+url: http://backend-keuangan.test/api/v1/login
+method: POST
+headers:
+  Accept: application/json
+body:
+  type: json
+  content: |-
+    {
+        "email": "admin@perusahaan.com",
+        "password": "password123"
+    }
+order: 1000

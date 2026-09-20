@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://backend-keuangan.test/api/v1/categories/1
+method: DELETE
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+order: 8000

@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://backend-keuangan.test/api/v1/budgets/summary
+method: GET
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+order: 6000

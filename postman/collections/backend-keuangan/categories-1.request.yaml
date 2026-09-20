@@ -1,0 +1,23 @@
+$kind: http-request
+name: categories
+url: http://backend-keuangan.test/api/v1/categories
+method: POST
+headers:
+  Accept: application/json
+  Authorization: Bearer {{token}}
+body:
+  type: json
+  content: "{\r
+
+    \    \"category_id\": 1,\r
+
+    \    \"item_name\": \"Maintenance AC Kantor\",\r
+
+    \    \"amount\": 250000,\r
+
+    \    \"transaction_date\": \"2026-09-20\",\r
+
+    \    \"notes\": \"Keperluan PT\"\r
+
+    }"
+order: 3000

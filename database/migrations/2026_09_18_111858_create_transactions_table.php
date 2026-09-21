@@ -10,20 +10,21 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('budget_id')->constrained('budgets')->onDelete('cascade');
-            $table->foreignId('category_id')->constrained('categories')->onDelete('restrict');
+            $table->foreignId('budget_id')->nullable()->constrained('budgets')->onDelete('cascade');
+            $table->foreignId('category_id')->nullable()->constrained('categories')->onDelete('restrict');
             $table->string('item_name');
             $table->integer('quantity')->default(1);
-            $table->decimal('unit_price', 15, 2);
-            $table->decimal('total_amount', 15, 2);
+            $table->decimal('unit_price', 15, 2)->default(0);
+            $table->decimal('amount', 15, 2); // Kolom amount yang dipanggil oleh Controller/Frontend
+            $table->decimal('total_amount', 15, 2)->nullable();
             $table->enum('type', ['income', 'expense']);
             $table->dateTime('transaction_date');
             $table->text('notes')->nullable();
-            $table->foreignId('created_by')->constrained('users')->onDelete('cascade');
+            $table->foreignId('created_by')->nullable()->constrained('users')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
 
-            $table->index(['budget_id', 'transaction_date']);
+            $table->index(['transaction_date']);
             $table->index(['type']);
         });
     }

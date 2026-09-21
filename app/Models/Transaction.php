@@ -12,12 +12,12 @@ class Transaction extends Model
 {
     use HasFactory, SoftDeletes;
 
-    // Mengizinkan seluruh kolom (budget_id, total_amount, amount, dll) disimpan secara otomatis
     protected $guarded = [];
 
     protected $casts = [
         'quantity'         => 'integer',
         'unit_price'       => 'decimal:2',
+        'amount'           => 'decimal:2',
         'total_amount'     => 'decimal:2',
         'transaction_date' => 'datetime',
     ];
